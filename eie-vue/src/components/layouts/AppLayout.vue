@@ -4,7 +4,7 @@
   <AppFooter />
 </template>
 
-<style scoped>
+<style>
 html {
   font-family: Urbanist, sans-serif;
   scroll-behavior: smooth;

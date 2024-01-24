@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from "./components/layouts/AppLayout.vue";
 import HeroSection from "./components/HeroSection.vue";
+import Features from "./components/Features.vue";
 </script>
 
 <template>
