@@ -24,11 +24,14 @@
                 <div
                   class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"
                 ></div>
-                <div class="h-6 w-2 bg-primary"></div>
+                <div
+                  class="h-6 w-2"
+                  :style="{ 'background-color': store.colores.primario }"
+                ></div>
               </div>
-              <span class="text-2xl font-bold text-gray-900 dark:text-white"
-                >Astrolus</span
-              >
+              <span class="text-2xl font-bold text-gray-900 dark:text-white">{{
+                store.nombre
+              }}</span>
             </a>
 
             <div class="relative flex items-center lg:hidden max-h-10">
@@ -68,33 +71,37 @@
                 <li>
                   <a
                     href="#features"
-                    class="block md:px-4 transition hover:text-primary"
+                    class="block md:px-4 transition"
+                    :style="{ hover: store.colores.primario }"
                   >
-                    <span>Features</span>
+                    <span>Sobre nosotros</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="#solution"
-                    class="block md:px-4 transition hover:text-primary"
+                    class="block md:px-4 transition"
+                    :style="{ hover: store.colores.primario }"
                   >
-                    <span>Solution</span>
+                    <span>Que ofrecemos</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="#testimonials"
-                    class="block md:px-4 transition hover:text-primary"
+                    class="block md:px-4 transition"
+                    :style="{ hover: store.colores.primario }"
                   >
-                    <span>Testimonials</span>
+                    <span>Testimonios</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="#blog"
-                    class="block md:px-4 transition hover:text-primary"
+                    class="block md:px-4 transition"
+                    :style="{ hover: store.colores.primario }"
                   >
-                    <span>Blog</span>
+                    <span>Noticias</span>
                   </a>
                 </li>
               </ul>
@@ -103,10 +110,30 @@
             <div class="mt-12 lg:mt-0">
               <a
                 href="#"
-                class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                :class="[
+                  'relative',
+                  'flex',
+                  'h-9',
+                  'w-full',
+                  'items-center',
+                  'justify-center',
+                  'px-4',
+                  'absolute',
+                  'inset-0',
+                  'rounded-full',
+                  'transition',
+                  'duration-300',
+                  'hover:scale-105',
+                  'active:duration-75',
+                  'active:scale-95',
+                  'sm:w-max',
+                ]"
+                :style="{
+                  'background-color': store.colores.primario,
+                }"
               >
                 <span class="relative text-sm font-semibold text-white"
-                  >Get Started</span
+                  >Contáctanos</span
                 >
               </a>
             </div>
@@ -117,11 +144,13 @@
   </header>
 </template>
 
-<script>
+<script setup>
 import Container from "./Container.vue";
-export default {
-  components: {
-    Container,
-  },
+import { useGlobalStore } from "@/store/globalStore";
+
+const store = useGlobalStore();
+
+const getClass = (color) => {
+  return `before:bg-${color}`;
 };
 </script>

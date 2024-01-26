@@ -8,7 +8,11 @@
           >
             <ul class="list-inside list-disc space-y-8">
               <li>
-                <a href="#" class="transition hover:text-primary">Home</a>
+                <a
+                  href="#"
+                  :class="['transition', 'hover:text-[store.colores.primario]']"
+                  >Home</a
+                >
               </li>
 
               <li>
@@ -206,11 +210,9 @@
   </footer>
 </template>
 
-<script>
+<script setup>
 import Container from "./Container.vue";
-export default {
-  components: {
-    Container,
-  },
-};
+import { useGlobalStore } from "@/store/globalStore";
+
+const store = useGlobalStore();
 </script>

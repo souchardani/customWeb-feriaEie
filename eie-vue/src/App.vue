@@ -1,18 +1,7 @@
 <script setup>
-import AppLayout from "./components/layouts/AppLayout.vue";
-import HeroSection from "./components/HeroSection.vue";
-import Features from "./components/Features.vue";
+import Forms from "./views/Forms.vue";
 </script>
 
 <template>
-  <AppLayout>
-    <main class="space-y-40 mb-40">
-      <HeroSection />
-      <Features />
-      <Stats />
-      <Testimonials />
-      <CallToAction />
-      <Blog />
-    </main>
-  </AppLayout>
+  <router-view></router-view>
 </template>

@@ -18,7 +18,7 @@
         <h2
           class="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl"
         >
-          A technology-first approach to payments and finance
+          Aqui puedes saber un poco mas de nosotros
         </h2>
         <p class="text-gray-600 dark:text-gray-300">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ad
@@ -46,18 +46,19 @@
               <h5
                 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary"
               >
-                First feature
+                Arte
               </h5>
               <p class="text-gray-600 dark:text-gray-300">
-                Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                nostrum.
+                Nos gusta mucho el arte, Nuestra pelicula favorita es
+                {{ store.pelicula }}, y nuestro libro favorito es
+                {{ store.libro }}.
               </p>
             </div>
             <a
               href="#"
               class="flex items-center justify-between group-hover:text-secondary"
             >
-              <span class="text-sm">Read more</span>
+              <span class="text-sm">Saber más</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -89,18 +90,17 @@
               <h5
                 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary"
               >
-                Second feature
+                Música
               </h5>
               <p class="text-gray-600 dark:text-gray-300">
-                Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                nostrum.
+                En cuanto a la música, mi género favorito es {{ store.musica }}
               </p>
             </div>
             <a
               href="#"
               class="flex items-center justify-between group-hover:text-secondary"
             >
-              <span class="text-sm">Read more</span>
+              <span class="text-sm">Saber más</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -132,18 +132,17 @@
               <h5
                 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary"
               >
-                Third feature
+                Estudios
               </h5>
               <p class="text-gray-600 dark:text-gray-300">
-                Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                nostrum.
+                Actualmente, Estoy estudiando {{ store.estudios }}
               </p>
             </div>
             <a
               href="#"
               class="flex items-center justify-between group-hover:text-secondary"
             >
-              <span class="text-sm">Read more</span>
+              <span class="text-sm">Saber más</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -177,18 +176,17 @@
               <h5
                 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary"
               >
-                More features
+                Pasatiempos
               </h5>
               <p class="text-gray-600 dark:text-gray-300">
-                Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                nostrum.
+                en cuanto a hobbies, mi favorito es {{ store.pasatiempo }}
               </p>
             </div>
             <a
               href="#"
               class="flex items-center justify-between group-hover:text-secondary"
             >
-              <span class="text-sm">Read more</span>
+              <span class="text-sm">Saber más</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -209,11 +207,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Container from "./Container.vue";
-export default {
-  components: {
-    Container,
-  },
-};
+import { useGlobalStore } from "@/store/globalStore";
+
+const store = useGlobalStore();
 </script>

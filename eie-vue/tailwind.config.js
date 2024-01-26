@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   presets: [],
-  darkMode: "media", // or 'class'
+  darkMode: "none", // or 'class'
   theme: {
     screens: {
       sm: "640px",
@@ -977,5 +977,5 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

@@ -17,14 +17,16 @@
           <h1
             class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
           >
-            Shaping a world with
-            <span class="text-primary dark:text-white">reimagination.</span>
+            Hola, Me llamo
+            <span class="text-primary dark:text-white">
+              {{ store.nombre }}</span
+            >
           </h1>
           <p class="mt-8 text-gray-700 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-            incidunt nam itaque sed eius modi error totam sit illum. Voluptas
-            doloribus asperiores quaerat aperiam. Quidem harum omnis beatae
-            ipsum soluta!
+            Bienvenidos a mi página web, aquí podrás encontrar información sobre
+            mi, mis gustos, mis hobbies, mis proyectos y mucho más. asi como
+            también podrás contactarme si lo deseas.Te invito a que navegues por
+            mi página y conozcas más sobre mi.
           </p>
           <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
             <a
@@ -32,7 +34,7 @@
               class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
             >
               <span class="relative text-base font-semibold text-white"
-                >Get started</span
+                >Contáctame</span
               >
             </a>
             <a
@@ -41,7 +43,7 @@
             >
               <span
                 class="relative text-base font-semibold text-primary dark:text-white"
-                >Learn more</span
+                >Saber más sobre mi</span
               >
             </a>
           </div>
@@ -50,21 +52,21 @@
           >
             <div class="text-left">
               <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                The lowest price
+                {{ store.caracteristicas.c1 }}
               </h6>
-              <p class="mt-2 text-gray-500">Some text here</p>
+              <p class="mt-2 text-gray-500">Somos transparentes</p>
             </div>
             <div class="text-left">
               <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                The fastest on the market
+                {{ store.caracteristicas.c2 }}
               </h6>
-              <p class="mt-2 text-gray-500">Some text here</p>
+              <p class="mt-2 text-gray-500">buscamos la excelencia</p>
             </div>
             <div class="text-left">
               <h6 class="text-lg font-semibold text-gray-700 dark:text-white">
-                The most loved
+                {{ store.caracteristicas.c3 }}
               </h6>
-              <p class="mt-2 text-gray-500">Some text here</p>
+              <p class="mt-2 text-gray-500">Queremos tu felicidad</p>
             </div>
           </div>
         </div>
@@ -139,11 +141,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onMounted } from "vue";
 import Container from "./Container.vue";
-export default {
-  components: {
-    Container,
-  },
-};
+import { useGlobalStore } from "@/store/globalStore";
+
+const store = useGlobalStore();
 </script>
